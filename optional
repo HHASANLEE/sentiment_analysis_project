@@ -1,0 +1,46 @@
+1) Importlar
+import pandas as pd # DataFrame-lərlə işləmək üçün
+import numpy as np # Rəqəmsal əməliyyatlar üçün
+import matplotlib.pyplot as plt # Qrafik və vizualizasiya üçün
+import seaborn as sns # Statistik və estetik qrafiklər üçün
+import nltk # NLP üçün
+nltk.download('punkt') # Cümlə və sözləri ayırmaq üçün lazım olan paket
+2) Fayli oxuyub ‘df’ adında DataFrame şəklində yadda saxlayırıq
+3) Ilk 5 sətr
+4) DataFrame-in ölçüsü
+7) Sütunlar
+8) ‘sentence’ sütunundakı 50-ci cümləni ekrana yazdırır
+9) Cümləni tokenlərə ayırıb ilk 10 tokeni yazdırır
+10) POS tagging üçün lazım olan model yükləyib, tokenləri uyğun olduqları növlərə birləşdirir
+11) ne_chunk(tagged) - Söz növlərinə əsaslanıb NER(Named Entity Recognition) edir
+entities.pprint() - Tapılmış entitiləri açıq şəkildə göstərir
+13) ‘nltk’ kitabxanasindan ‘SentimentIntensityAnalyzer’ sinifi alınır
+‘tqdm’ - progress bar
+‘vader_lexicon’ - VADER modelinin lüğəti
+14) Mətndəki sentimenti təhlil edib nəticə qaytarır
+16) Bütün dataset üzərində VADER sentiment analizi aparılır
+res - bütün nəticələri saxlayacağımız dictionary
+for dövrü - datasetdəki hər sətri bir-bir gəzib progress bar göstəririk
+Sentence - son sətrin sütunundakı cümləni alırıq
+myid = i - ID saxlayırıq
+res[myid] - həmin cümlənin sentiment skorlarını saxlayıb res dict-də saxlayırıq
+19) Cümlənin sentiment skorları (neg, neu, pos, compound)
+Əlavə olaraq cümlənin özü və ‘sentiment’ etiketi olacaq
+22) ‘vaders’ DataFrame-indəki hər bir cümlənin compund sentiment skoru vizuallaşdırıldı
+23) İlk 10 cümlənin sentiment analizini daha oxunaqlı şəkildə görünməsi üçün
+x oxundakı cümlələr bir-birinə qarışmasın deyə 45 dərəcə əyib göstəririk
+24) Vaders DataFrame-ində 3 fərqli barplot(pozitiv, neytral, neqativ) yaradıb skorlara baxırıq\
+
+25) transformers kitabxanasından istifadə edərək pre-trained bir NLP model yükləmək və sentiment
+analizi aparmaq üçün lazım olanlar
+26) Roberta modelini yükləmək üçün
+28) tokenizer - mətnin daxilindəki sözləri modelin anlayacağı tokenlərə çevirir
+
+29) roBERTa modeli ilə bir cümlənin sentiment skorlarını hesablamaq
+softmax funksiyasıda tətbiq edilir
+30) roberta modeli üçün funksiya
+31) VADER və roBERTa modellərinin nəticələrini birləşdirib (dictionary merge) bir dict-də yığırıq
+35) pairplot ilə müsbət, neytral, mənfi sentiment xüsusiyyətlərinin qarşılıqlı əlaqələrini vizuallaşdırır
+Hər bir cümlə ümumi ‘compound’ dəyərinə görə fərqli rəngdədir
+(130-136) review examples
+155) Transformer pipeline
